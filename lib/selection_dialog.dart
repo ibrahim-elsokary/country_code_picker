@@ -81,7 +81,7 @@ class _SelectionDialogState extends State<SelectionDialog> {
                     : Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ...widget.favoriteElements.map(
+                          ...widget.favoriteElements.toSet().toList().map(
                             (f) => SimpleDialogOption(
                               child: _buildOption(f),
                               onPressed: () {
