@@ -76,28 +76,28 @@ class _SelectionDialogState extends State<SelectionDialog> {
                 widget.size?.height ?? MediaQuery.of(context).size.height * 0.7,
             child: ListView(
               children: [
-                widget.favoriteElements.isEmpty
-                    ? const DecoratedBox(decoration: BoxDecoration())
-                    : Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ...widget.favoriteElements.toSet().toList().map(
-                            (f) => SimpleDialogOption(
-                              child: _buildOption(f),
-                              onPressed: () {
-                                _selectItem(f);
-                              },
-                            ),
-                          ),
-                          const Divider(),
-                        ],
-                      ),
+                // widget.favoriteElements.isEmpty
+                //     ? const DecoratedBox(decoration: BoxDecoration())
+                //     : Column(
+                //         crossAxisAlignment: CrossAxisAlignment.start,
+                //         children: [
+                //           ...widget.favoriteElements.map(
+                //             (f) => SimpleDialogOption(
+                //               child: _buildOption(f),
+                //               onPressed: () {
+                //                 _selectItem(f);
+                //               },
+                //             ),
+                //           ),
+                //           const Divider(),
+                //         ],
+                //       ),
                 if (filteredElements.isEmpty)
                   _buildEmptySearchWidget(context)
                 else
-                  ...filteredElements.toSet().toList().map(
+                  ...filteredElements.map(
                     (e) => SimpleDialogOption(
-                      key: Key(e.toLongString()),
+                      // key: Key(e.toLongString()),
                       child: _buildOption(e),
                       onPressed: () {
                         _selectItem(e);
