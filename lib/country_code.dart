@@ -52,7 +52,7 @@ class CountryCode {
       name: json['name'],
       code: json['code'],
       dialCode: json['dial_code'],
-      flagUri: 'flags/${json['code'].toLowerCase()}.png',
+      flagUri: 'flags/${json['code'].toLowerCase()}.svg',
     );
   }
 
